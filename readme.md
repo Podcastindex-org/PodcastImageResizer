@@ -32,3 +32,20 @@ function return_pimgurl($url,$size) {
     return 'https://podcastimages.com/'.crc32($newurl).'_'.$size.'.jpg';
 }
 ```
+
+## Javascript Example
+
+```javascript
+const CRC32 = require('crc-32'); // https://www.npmjs.com/package/crc-32
+
+const return_pimgurl = function(artwork, size) {
+    let pos = artwork.indexOf('://');
+    if(pos !== -1) {
+        let crc = CRC32.str(artwork.substr(pos+3));
+        return `https://podcastimages.com/${crc}_${size}.jpg`;
+    }
+    return artwork;
+}
+
+console.log(return_pimgurl('https://podnews.net/static/podnews-2000x2000.png',300))
+```
