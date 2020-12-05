@@ -18,6 +18,12 @@ If you wanted the 300px square version of that image you would call:
 
 https://podcastimages.com/1639321931_300.jpg
 
+### To note:
+
+Leading zeros are removed.
+
+https://podcastimages.com/0594250915_300.jpg doesn't work; https://podcastimages.com/594250915_300.jpg does.
+
 ## CRC32 in PHP
 
 ```php
